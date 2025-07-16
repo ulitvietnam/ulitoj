@@ -25,17 +25,36 @@
         }
       }
 
-      .fade-zoom {
-        animation: fadeZoomOut 2.4s ease-in forwards;
+      @keyframes animatedGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       body {
         font-family: 'Segoe UI', sans-serif;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom right, #90cdf4, #7f9cf5, #fbb6ce);
+        background-size: 400% 400%;
+        animation: animatedGradient 10s ease infinite;
+      }
+
+      .fade-zoom {
+        animation: fadeZoomOut 2.4s ease-in forwards;
       }
     </style>
   </head>
-  <body class="bg-gradient-to-br from-indigo-300 via-purple-200 to-pink-200 flex items-center justify-center h-screen">
-
+  <body>
     <div class="text-center bg-white bg-opacity-60 px-8 py-6 rounded-2xl shadow-xl fade-zoom">
       <h1 class="text-5xl font-extrabold text-blue-600 mb-2 tracking-wide">
         ULIT
